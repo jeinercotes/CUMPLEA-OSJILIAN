@@ -1,1038 +1,964 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="light">
+<html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Cumpleaños N° 11 de Jilian Sofia</title>
-<meta name="description" content="Invitación al cumpleaños N° 11 de Jilian Sofia Cotes Vasquez. Sábado 7 de noviembre, 10:00 am, con un piscinazo.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitación: Cumpleaños N° 11 de Jilian Sofia</title>
 
-<!-- Tipografías (Google Fonts) -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <!-- Google Fonts: Fuentes estilizadas para títulos destacados y lectura clara -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Lilita+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-<style>
-/* =====================================================================
-   1. VARIABLES DE COLOR Y ESTILOS DE FONDO
-   ===================================================================== */
-:root{
-  --naranja:#F3A54A;
-  --naranja-fuerte:#E8862A;
-  --amarillo:#FDF3A7;
-  --verde:#7CB342;
-  --verde-oscuro:#4F7D22;
-  --rojo:#D32F2F;
-  --madera:#8A5A2B;
-  --madera-oscura:#5C3A1A;
+  <style>
+    /* ==========================================================================
+       1. VARIABLES GLOBALES DE COLOR Y TEMAS (Día y Noche)
+       ========================================================================== */
+    :root {
+      --fondo: #F3A54A;          /* Naranja suave vibrante */
+      --tarjeta: #FFF9DC;        /* Tono crema cálido para contenido */
+      --amarillo: #FDF3A7;       /* Amarillo pastel brillante */
+      --R1: #29fd16;
+      --R2: #ffffff;
+      --verde: #7CB342;          /* Verde manzana fresco */
+      --rojo: #D32F2F;           /* Rojo festivo */
+      --rojo-hover: #B71C1C;
+      --texto: #4A2A10;          /* Café oscuro para máxima legibilidad */
+      --sombra: rgba(74, 42, 16, 0.2);
+      --borde-titulo: #8E1C1C;
+    }
 
-  --bg:#F3A54A;
-  --bg-2:#F7BE72;
-  --card:#FFF8D6;
-  --card-borde:#E9C46A;
-  --texto:#4A2C14;
-  --texto-suave:#7A5530;
-  --nav-bg:#5C3A1A;
-  --nav-texto:#FDF3A7;
-  --sombra:0 10px 28px rgba(92,58,26,.28);
-}
-[data-theme="dark"]{
-  --bg:#2A1A0E;
-  --bg-2:#3A2412;
-  --card:#3B2716;
-  --card-borde:#6B4724;
-  --texto:#FDF3A7;
-  --texto-suave:#E3CE8A;
-  --nav-bg:#170D06;
-  --nav-texto:#FDF3A7;
-  --naranja:#C9822E;
-  --naranja-fuerte:#B06A1C;
-  --sombra:0 10px 28px rgba(0,0,0,.55);
-}
+    /* Estilos adaptativos para Modo Noche */
+    body.noche {
+      --fondo: #2A1B12;
+      --tarjeta: #3A2819;
+      --amarillo: #4A3A25;
+      --verde: #9CCC65;
+      --rojo: #EF5350;
+      --rojo-hover: #E53935;
+      --texto: #FBEFD0;
+      --sombra: rgba(0, 0, 0, 0.6);
+      --borde-titulo: #1A0D07;
+    }
 
-/* =====================================================================
-   2. BASE & FONDO APPLEJACK
-   ===================================================================== */
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{
-  font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;
-  color:var(--texto);
-  /* Se establece el fondo interactivo/temático con un patrón y degradado suave */
-  background-color: var(--bg);
-  background-image: 
-    radial-gradient(circle at 20% 20%, rgba(253, 243, 167, 0.4) 2%, transparent 3%),
-    radial-gradient(circle at 80% 80%, rgba(211, 47, 47, 0.2) 2%, transparent 3%),
-    linear-gradient(135deg, var(--bg), var(--bg-2), var(--bg));
-  background-size: 60px 60px, 60px 60px, 300% 300%;
-  animation: fondoMueve 18s ease-in-out infinite;
-  line-height:1.6;
-  padding-bottom:calc(84px + env(safe-area-inset-bottom,0px));
-  transition:background-color .4s,color .4s;
-  overflow-x:hidden;
-}
-body.bloqueado{overflow:hidden}
-@keyframes fondoMueve{0%,100%{background-position:0 0, 0 0, 0% 50%}50%{background-position:30px 30px, 30px 30px, 100% 50%}}
-h1,h2,h3{font-family:'Lilita One','Nunito',sans-serif;font-weight:400;letter-spacing:.5px;line-height:1.1}
-img{max-width:100%;display:block}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--rojo);outline-offset:3px}
+    /* ==========================================================================
+       2. REGLAS GENERALES Y TIPOGRAFÍA
+       ========================================================================== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-#fondo-anim{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
-main,footer{position:relative;z-index:1}
+    html {
+      scroll-behavior: smooth;
+    }
 
-section{
-  scroll-margin-top:20px;
-  padding:64px 18px 24px;
-  max-width:1100px;margin:0 auto;
-}
-.titulo-seccion{
-  text-align:center;font-size:clamp(2rem,6vw,3rem);
-  color:var(--amarillo);
-  text-shadow:0 3px 0 var(--madera-oscura),0 6px 14px rgba(0,0,0,.25);
-  margin-bottom:28px;
-}
+    body {
+      font-family: 'Nunito', system-ui, sans-serif;
+      background-color: var(--fondo);
+      color: var(--texto);
+      padding-bottom: 90px; /* Margen inferior para no tapar contenido con el menú fijo */
+      transition: background-color 0.4s ease, color 0.4s ease;
+      overflow-x: hidden;
+    }
 
-.madera{
-  background:
-    repeating-linear-gradient(95deg,rgba(0,0,0,.05) 0 2px,transparent 2px 14px),
-    linear-gradient(180deg,#A8733B,#8A5A2B);
-  border:4px solid var(--madera-oscura);
-  border-radius:16px;
-  box-shadow:var(--sombra);
-  color:var(--amarillo);
-}
-.tarjeta{
-  background:var(--card);
-  border:3px solid var(--card-borde);
-  border-radius:22px;
-  box-shadow:var(--sombra);
-}
+    main, nav, footer {
+      position: relative;
+      z-index: 1;
+    }
 
-/* =====================================================================
-   3. BIENVENIDA
-   ===================================================================== */
-#bienvenida{
-  position:fixed;inset:0;z-index:1000;
-  display:flex;align-items:center;justify-content:center;
-  padding:20px;text-align:center;
-  background:
-    radial-gradient(circle at 50% 38%,#FFE08A 0 14%,transparent 15%),
-    repeating-conic-gradient(from 0deg at 50% 38%,rgba(255,255,255,.16) 0 7deg,transparent 7deg 14deg),
-    linear-gradient(180deg,#F3A54A,#E8862A 70%,#7CB342 70.2%,#5E9A2D);
-  transition:opacity .9s ease,visibility .9s;
-}
-#bienvenida.salir{opacity:0;visibility:hidden}
-.bv-apple{position:absolute;top:-60px;font-size:2rem;animation:caer linear infinite;opacity:.9}
-@keyframes caer{to{transform:translateY(115vh) rotate(360deg)}}
-.bv-contenido{position:relative;max-width:520px;width:100%;display:flex;flex-direction:column;align-items:center;gap:14px}
-.bv-foto{
-  width:min(76vw,310px);aspect-ratio:3/4;object-fit:contain;
-  filter:drop-shadow(0 8px 14px rgba(0,0,0,.35));
-  animation:flota 3.4s ease-in-out infinite;
-}
-@keyframes flota{50%{transform:translateY(-10px) rotate(-2deg)}}
-.bv-letrero{padding:16px 20px 18px;width:100%}
-.bv-letrero small{display:block;font-weight:800;font-size:1rem;color:var(--amarillo)}
-.bv-letrero h1{font-size:clamp(2rem,9vw,3.2rem);color:#fff;text-shadow:0 3px 0 var(--madera-oscura)}
-.bv-letrero .once{color:#FF6FA8;font-size:1.3em}
-.bv-mensaje{
-  background:var(--card);color:var(--texto);
-  border-radius:16px;padding:12px 16px;font-weight:700;
-  box-shadow:var(--sombra);
-}
-.btn{
-  font-family:'Lilita One',sans-serif;font-size:1.35rem;letter-spacing:.5px;
-  border:4px solid var(--madera-oscura);border-radius:999px;
-  background:linear-gradient(180deg,#E94B4B,var(--rojo));color:#fff;
-  padding:12px 32px;cursor:pointer;text-decoration:none;display:inline-block;
-  box-shadow:0 6px 0 var(--madera-oscura),0 12px 20px rgba(0,0,0,.3);
-  transition:transform .15s,box-shadow .15s;
-}
-.btn:hover{transform:translateY(-2px)}
-.btn:active{transform:translateY(4px);box-shadow:0 2px 0 var(--madera-oscura)}
-#bv-entrar{animation:pulso 1.8s ease-in-out infinite}
-@keyframes pulso{50%{transform:scale(1.06)}}
+    section {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 75px 20px 30px;
+    }
 
-/* =====================================================================
-   4. INTERRUPTOR MODO CLARO / OSCURO
-   ===================================================================== */
-#modo{
-  position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right:12px;z-index:900;
-  display:flex;align-items:center;gap:8px;
-  background:var(--nav-bg);color:var(--nav-texto);
-  border:3px solid var(--madera);border-radius:999px;
-  padding:5px 8px 5px 14px;cursor:pointer;
-  font:800 .85rem 'Nunito',sans-serif;
-  box-shadow:var(--sombra);
-}
-#modo .pista{
-  width:46px;height:26px;border-radius:999px;background:var(--naranja);
-  position:relative;transition:background .3s;
-}
-#modo .bola{
-  position:absolute;top:2px;left:2px;width:22px;height:22px;border-radius:50%;
-  background:var(--amarillo);display:grid;place-items:center;font-size:.8rem;
-  transition:transform .3s;
-}
-[data-theme="dark"] #modo .pista{background:#6B4724}
-[data-theme="dark"] #modo .bola{transform:translateX(20px)}
-@media (max-width:420px){#modo .txt{display:none}#modo{padding-left:8px}}
+    /* ==========================================================================
+       3. DISEÑO MEJORADO DE LOS TÍTULOS (Encabezados Festivos)
+       ========================================================================== */
+    h2, .titulo-seccion {
+      font-family: 'Lilita One', 'Baloo 2', cursive;
+      font-size: clamp(2.2rem, 6vw, 3.2rem);
+      text-align: center;
+      color: #FFF;
+      text-shadow: 
+        3px 3px 0px var(--rojo),
+        -2px -2px 0px var(--rojo),
+        2px -2px 0px var(--rojo),
+        -2px 2px 0px var(--rojo),
+        0px 6px 12px var(--sombra);
+      letter-spacing: 1.5px;
+      margin-bottom: 35px;
+      position: relative;
+      display: table;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 6px 24px;
+      background: linear-gradient(135deg, var(--rojo) 0%, #FF5252 100%);
+      border-radius: 25px;
+      box-shadow: 0 8px 20px var(--sombra);
+      transform: rotate(-1deg);
+    }
 
-/* =====================================================================
-   5. INICIO
-   ===================================================================== */
-#inicio{padding-top:84px;display:grid;gap:30px;align-items:center}
-.hero-texto{text-align:center}
-.hero-texto .cartel{padding:20px 18px 22px;display:inline-block;width:100%;max-width:520px}
-.hero-texto .cartel .pre{font-family:'Lilita One';font-size:clamp(1.6rem,5vw,2.2rem);color:#fff;text-shadow:0 3px 0 var(--madera-oscura)}
-.hero-texto .num{
-  font-family:'Lilita One';font-size:clamp(6rem,26vw,10rem);line-height:.9;
-  color:#FF4F93;-webkit-text-stroke:5px #fff;paint-order:stroke fill;
-  text-shadow:0 6px 0 var(--madera-oscura);display:block;
-}
-.hero-texto .invita{
-  margin:18px auto 0;max-width:520px;background:var(--card);border-radius:16px;
-  padding:12px 16px;font-weight:800;font-size:1.15rem;box-shadow:var(--sombra);
-}
-.nombre-sign{margin:18px auto 0;max-width:520px;padding:12px 16px}
-.nombre-sign .n1{font-family:'Lilita One';font-size:clamp(1.8rem,7vw,2.6rem);color:#FF8FBF;text-shadow:0 2px 0 var(--madera-oscura)}
-.nombre-sign .n2{font-weight:800;color:var(--amarillo);font-size:1.15rem}
-.datos{display:grid;gap:10px;margin:18px auto 0;max-width:520px}
-.dato{
-  display:flex;align-items:center;gap:12px;text-align:left;
-  background:var(--card);border:3px solid var(--card-borde);border-radius:16px;padding:10px 14px;
-}
-.dato .ico{font-size:1.8rem}
-.dato b{display:block;font-size:1.15rem}
-.dato span{color:var(--texto-suave);font-weight:600;font-size:.95rem}
+    h2::before {
+      content: '🍎 ';
+    }
+    h2::after {
+      content: ' 🎈';
+    }
 
-.cuenta{display:flex;justify-content:center;gap:8px;margin:20px auto 0;max-width:520px}
-.cuenta div{
-  flex:1;background:var(--verde);color:#fff;border:3px solid var(--verde-oscuro);
-  border-radius:14px;padding:8px 2px;box-shadow:0 4px 0 var(--verde-oscuro);
-}
-.cuenta b{display:block;font-family:'Lilita One';font-size:1.8rem;font-weight:400;line-height:1}
-.cuenta small{font-weight:800;font-size:.75rem}
-#cuenta-fin{text-align:center;font-family:'Lilita One';font-size:1.8rem;color:var(--amarillo);margin-top:18px}
+    /* ==========================================================================
+       4. FONDO ANIMADO DE MANZANAS
+       ========================================================================== */
+    #fondo-animado {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      z-index: 0;
+      pointer-events: none;
+    }
 
-.hero-tarjeta{display:flex;justify-content:center}
-.hero-tarjeta img{
-  width:min(100%,400px);border-radius:20px;border:6px solid var(--card);
-  box-shadow:var(--sombra);transform:rotate(2deg);transition:transform .4s;
-}
-.hero-tarjeta img:hover{transform:rotate(0) scale(1.02)}
+    .manzana-flotante {
+      position: absolute;
+      bottom: -60px;
+      opacity: 0.6;
+      animation: subirPantalla linear infinite;
+    }
 
-@media (min-width:860px){
-  #inicio{grid-template-columns:1.1fr .9fr;gap:48px}
-  .hero-texto{text-align:left}
-  .hero-texto .cartel,.hero-texto .invita,.nombre-sign,.datos,.cuenta{margin-left:0}
-}
+    @keyframes subirPantalla {
+      to {
+        transform: translateY(-115vh) rotate(360deg);
+      }
+    }
 
-/* =====================================================================
-   6. UBICACIÓN
-   ===================================================================== */
-.ubic-caja{padding:18px;display:grid;gap:16px;text-align:center}
-.ubic-info{
-  display:flex;align-items:center;justify-content:center;gap:10px;
-  background:var(--card);border:2px solid var(--card-borde);
-  border-radius:12px;padding:12px;box-shadow:0 4px 10px rgba(0,0,0,.08);
-}
-.ubic-info .ico-mapa{font-size:2rem;color:var(--rojo)}
-.ubic-info div{text-align:left}
-.ubic-info h4{font-size:1.2rem;color:var(--madera-oscura)}
-.ubic-info p{font-weight:700;font-size:0.95rem;color:var(--texto-suave);margin:0}
-.mapa-contenedor{position:relative;width:100%;border-radius:16px;overflow:hidden;border:3px solid var(--card-borde)}
-.mapa{
-  width:100%;aspect-ratio:16/10;min-height:280px;border:0;
-  background:#ddd;display:block;
-}
-[data-theme="dark"] .mapa{filter:brightness(.85) contrast(1.05)}
+    /* ==========================================================================
+       5. PANTALLA DE BIENVENIDA Y BOTONES
+       ========================================================================== */
+    #bienvenida {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+      color: #4A2A10;
+      background: linear-gradient(rgba(243,165,74,0.9), rgba(253,243,167,0.92)),
+                  url('https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=1400') center/cover;
+      transition: opacity 0.8s ease, visibility 0.8s;
+    }
 
-/* =====================================================================
-   7. SOBRE MÍ
-   ===================================================================== */
-.sobre{display:grid;overflow:hidden}
-.sobre-foto{
-  background:
-    radial-gradient(circle at 50% 30%,#FFF1A6,transparent 62%),
-    linear-gradient(180deg,var(--verde),var(--verde-oscuro));
-  display:flex;align-items:flex-end;justify-content:center;
-  min-height:340px;padding:24px 20px 0;position:relative;overflow:hidden;
-}
-.sobre-foto::before,.sobre-foto::after{content:'🍎';position:absolute;font-size:2.4rem;opacity:.9}
-.sobre-foto::before{top:14px;left:16px;transform:rotate(-15deg)}
-.sobre-foto::after{top:20px;right:18px;transform:rotate(18deg)}
-.sobre-foto img{max-height:420px;width:auto;object-fit:contain;filter:drop-shadow(0 8px 12px rgba(0,0,0,.3))}
-.sobre-info{padding:26px 22px 28px}
-.sobre-info h3{font-size:clamp(1.7rem,5vw,2.3rem);color:var(--rojo);margin-bottom:14px}
-[data-theme="dark"] .sobre-info h3{color:#FF7A7A}
-.ficha{display:grid;gap:10px}
-.ficha div{
-  display:grid;grid-template-columns:auto 1fr;gap:4px 12px;align-items:baseline;
-  padding-bottom:9px;border-bottom:2px dashed var(--card-borde);
-}
-.ficha dt{font-weight:800;color:var(--verde-oscuro);white-space:nowrap}
-[data-theme="dark"] .ficha dt{color:#A5D26A}
-.ficha dd{font-weight:600}
-.ficha .largo{grid-template-columns:1fr}
-@media (min-width:760px){
-  .sobre{grid-template-columns:.85fr 1.15fr}
-  .sobre-foto{min-height:100%}
-  .sobre-info{padding:36px 36px 38px}
-}
+    #bienvenida.oculto {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
 
-.familia-titulo{font-size:clamp(1.6rem,5vw,2.2rem);text-align:center;color:var(--amarillo);text-shadow:0 3px 0 var(--madera-oscura);margin:44px 0 18px}
-.familia{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.familia figure{border-radius:18px;overflow:hidden;border:5px solid var(--card);box-shadow:var(--sombra);aspect-ratio:3/4;background:var(--card)}
-.familia figure:nth-child(odd){transform:rotate(-1.2deg)}
-.familia figure:nth-child(even){transform:rotate(1.2deg)}
-.familia img{width:100%;height:100%;object-fit:cover}
-@media (min-width:760px){.familia{grid-template-columns:repeat(4,1fr)}}
+    #bienvenida .manzana-grande img {
+      width: 430px;
+      height: 430px;
+      object-fit: contain;
+      animation: rebote 2s ease-in-out infinite;
+    }
 
-/* =====================================================================
-   8. FOTOS DEL EVENTO
-   ===================================================================== */
-.galeria{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-@media (min-width:700px){.galeria{grid-template-columns:repeat(3,1fr);gap:16px}}
-.slot{
-  aspect-ratio:1/1;border-radius:18px;overflow:hidden;
-  border:4px dashed var(--madera);background:rgba(255,248,214,.55);
-  display:grid;place-items:center;text-align:center;color:var(--texto);
-  font-weight:800;padding:10px;
-}
-[data-theme="dark"] .slot{background:rgba(59,39,22,.7)}
-.slot span{display:block;font-size:2.2rem}
-.slot small{display:block;color:var(--texto-suave);font-weight:700}
-.slot.llena{border:5px solid var(--card);padding:0;background:var(--card)}
-.slot img{width:100%;height:100%;object-fit:cover}
+    @keyframes rebote {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-16px); }
+    }
 
-/* =====================================================================
-   9. WHATSAPP FLOTANTE
-   ===================================================================== */
-#whatsapp{
-  position:fixed;right:16px;bottom:calc(92px + env(safe-area-inset-bottom,0px));z-index:850;
-  width:58px;height:58px;border-radius:50%;background:#25D366;
-  display:grid;place-items:center;box-shadow:0 8px 20px rgba(0,0,0,.35);
-  transition:transform .2s;
-}
-#whatsapp:hover{transform:scale(1.1)}
-#whatsapp svg{width:34px;height:34px;fill:#fff}
-#whatsapp::after{
-  content:'';position:absolute;inset:0;border-radius:50%;border:3px solid #25D366;
-  animation:onda 2.2s ease-out infinite;
-}
-@keyframes onda{from{transform:scale(1);opacity:.8}to{transform:scale(1.7);opacity:0}}
+    #bienvenida h1 {
+      font-family: 'Lilita One', cursive;
+      font-size: clamp(2.5rem, 8vw, 4.5rem);
+      color: var(--rojo);
+      text-shadow: 2px 2px 0px #FFF;
+      margin: 12px 0;
+    }
 
-/* =====================================================================
-   10. MENÚ INFERIOR
-   ===================================================================== */
-#menu{
-  position:fixed;left:0;right:0;bottom:0;z-index:800;
-  background:var(--nav-bg);border-top:4px solid var(--madera);
-  padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px));
-  display:flex;justify-content:center;gap:4px;
-  box-shadow:0 -6px 20px rgba(0,0,0,.3);
-}
-#menu button{
-  flex:1;max-width:160px;background:none;border:0;cursor:pointer;
-  color:var(--nav-texto);opacity:.75;
-  display:flex;flex-direction:column;align-items:center;gap:2px;
-  padding:6px 4px;border-radius:14px;
-  font:800 .74rem 'Nunito',sans-serif;
-  transition:background .2s,opacity .2s,transform .2s;
-}
-#menu button svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-#menu button:hover{opacity:1}
-#menu button.activo{opacity:1;background:var(--rojo);color:#fff;transform:translateY(-3px)}
+    #bienvenida p {
+      max-width: 550px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
 
-/*=================================================================================
-agregado de mapa
-================================================================================*/
- .map-section-grid {
-            display: grid;
-            grid-template-columns: 320px 1fr;
-            gap: 1.5rem;
-            background-color: var(--blanco);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
-            overflow: hidden;
-            border: 1px solid var(--gris-medio);
-        }
+    .boton {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      background: var(--rojo);
+      color: #FFF;
+      border: none;
+      border-radius: 50px;
+      padding: 14px 42px;
+      cursor: pointer;
+      box-shadow: 0 6px 0 var(--borde-titulo), 0 10px 20px var(--sombra);
+      transition: transform 0.15s, box-shadow 0.15s, background-color 0.2s;
+    }
 
-        .map-sidebar {
-            padding: 1.25rem;
-            background-color: #FAFAFA;
-            border-right: 1px solid var(--gris-medio);
-            display: flex;
-            flex-direction: column;
-            height: 550px;
-        }
+    .boton:hover {
+      background-color: var(--rojo-hover);
+      transform: translateY(2px);
+      box-shadow: 0 4px 0 var(--borde-titulo);
+    }
 
-        .map-controls {
-            margin-bottom: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
+    .boton:active {
+      transform: translateY(6px);
+      box-shadow: 0 0 0 var(--borde-titulo);
+    }
 
-        .map-search-input {
-            width: 100%;
-            padding: 0.6rem 0.8rem;
-            border-radius: var(--radius-sm);
-            border: 1px solid var(--gris-medio);
-            font-size: 0.85rem;
-        }
+    /* Botón flotante Día/Noche */
+    #modo {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      z-index: 50;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 2px solid var(--amarillo);
+      cursor: pointer;
+      font-size: 1.6rem;
+      background: var(--tarjeta);
+      box-shadow: 0 4px 12px var(--sombra);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-        .map-filter-select {
-            width: 100%;
-            padding: 0.6rem 0.8rem;
-            border-radius: var(--radius-sm);
-            border: 1px solid var(--gris-medio);
-            background-color: var(--blanco);
-            font-size: 0.85rem;
-            color: var(--gris-oscuro);
-        }
+    /* ==========================================================================
+       6. SECCIÓN INICIO Y CUENTA REGRESIVA GIGANTE
+       ========================================================================== */
+    #inicio {
+      text-align: center;
+      padding-top: 90px;
+    }
 
-        .points-list {
-            overflow-y: auto;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            padding-right: 0.25rem;
-        }
+    #inicio h1 {
+      font-family: 'Lilita One', cursive;
+      font-size: clamp(2.8rem, 9vw, 5.2rem);
+      color: var(--rojo);
+      text-shadow: 3px 3px 0 var(--amarillo);
+    }
 
-        .point-item {
-            padding: 0.8rem;
-            background: var(--blanco);
-            border: 1px solid var(--gris-medio);
-            border-radius: var(--radius-sm);
-            cursor: pointer;
-            transition: var(--transition-fast);
-        }
+    .invita {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin: 10px 0 20px;
+    }
 
-        .point-item:hover, .point-item.active {
-            border-color: var(--azul-tecno);
-            background-color: var(--azul-boton);
-        }
+    .nombres-festejada {
+      font-family: 'Lilita One', cursive;
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      color: var(--verde);
+      text-shadow: 2px 2px 0 #FFF;
+      margin-bottom: 25px;
+    }
 
-        .point-item-title {
-            font-weight: 700;
-            font-size: 0.88rem;
-            color: var(--azul-oscuro);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .datos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin: 25px 0;
+    }
 
-        .point-status {
-            font-size: 0.65rem;
-            padding: 0.15rem 0.5rem;
-            border-radius: 10px;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
+    .dato {
+      background: var(--tarjeta);
+      border-radius: 20px;
+      padding: 16px 24px;
+      box-shadow: 0 6px 16px var(--sombra);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
-        .status-activo { background-color: #E8F5E9; color: var(--verde-exito); }
-        .status-inactivo { background-color: #FFEBEE; color: var(--rojo-alerta); }
+    .dato .ico {
+      font-size: 2rem;
+    }
 
-        .point-item-address {
-            font-size: 0.78rem;
-            color: #8b7d60;
-            margin-top: 0.25rem;
-        }
+    .dato small {
+      display: block;
+      font-size: 0.85rem;
+      opacity: 0.8;
+      font-weight: 600;
+    }
 
-        #map {
-            width: 100%;
-            height: 550px;
-            z-index: 1;
-        }
+    /* Estilos Destacados de la Cuenta Regresiva */
+    .cuenta-regresiva-seccion {
+      background: var(--tarjeta);
+      border: 4px solid var(--verde);
+      border-radius: 30px;
+      padding: 25px 15px;
+      margin: 35px auto;
+      max-width: 700px;
+      box-shadow: 0 10px 25px var(--sombra);
+    }
 
-        /* Popup Leaflet Personalizado */
-        .leaflet-popup-content-wrapper {
-            border-radius: var(--radius-sm);
-            padding: 0.5rem;
-            box-shadow: var(--shadow-md);
-        }
+    .cuenta-regresiva-seccion h3 {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: 1.5rem;
+      color: var(--rojo);
+      margin-bottom: 15px;
+    }
 
-        .custom-popup {
-            font-family: var(--font-main);
-        }
+    .cuenta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
 
-        .custom-popup h4 {
-            color: var(--azul-oscuro);
-            font-size: 0.95rem;
-            margin-bottom: 0.4rem;
-            border-bottom: 1px solid var(--gris-medio);
-            padding-bottom: 0.3rem;
-        }
+    .caja-tiempo {
+      background: var(--R1);
+      padding: 15px 8px;
+      border-radius: 18px;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+    }
 
-        .custom-popup p {
-            margin: 0.2rem 0;
-            font-size: 0.8rem;
-            color: #37474F;
-        }
+    .caja-tiempo b {
+      display: block;
+      font-family: 'Lilita One', cursive;
+      font-size: clamp(2.2rem, 7vw, 4rem);
+      color: var(--amarillo);
+      line-height: 1;
+    }
 
+    .caja-tiempo small {
+      font-size: 0.95rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--rojo);
+    }
 
-       
+    #cuenta-fin {
+      font-family: 'Lilita One', cursive;
+      font-size: 2rem;
+      color: var(--verde);
+      animation: rebote 1s infinite;
+    }
 
-        /* ==========================================================================
-           14. DISEÑO RESPONSIVE (MEDIA QUERIES)
-           ========================================================================== */
-        @media (max-width: 1024px) {
-            .hero h1 { font-size: 2.5rem; }
-            .process-grid, .stats-grid, .docs-grid { grid-template-columns: repeat(2, 1fr); }
-            .map-section-grid { grid-template-columns: 1fr; }
-            #map, .map-sidebar { height: 400px; }
-            .videos-grid { grid-template-columns: repeat(2, 1fr); }
-            .footer-grid { grid-template-columns: 1fr 1fr; }
-        }
+    /* Banner Promocional / Imagen Invitación */
+    .hero-tarjeta {
+      margin-top: 30px;
+      border-radius: 25px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px var(--sombra);
+    }
 
-        @media (max-width: 768px) {
-            .hamburger { display: block; }
-            .nav-menu {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background-color: var(--blanco);
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 2rem;
-                gap: 1.5rem;
-                transition: var(--transition-normal);
-                box-shadow: var(--shadow-md);
-            }
-            .nav-menu.active { left: 0; }
-            .hero-grid { grid-template-columns: 1fr; }
-            .hero-visual { display: none; }
-            .transparency-grid, .contact-grid { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: 1fr; }
-            .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
-        }
+    .hero-tarjeta img {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      display: block;
+    }
 
-        @media (max-width: 480px) {
-            .process-grid, .stats-grid, .videos-grid, .docs-grid { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 2rem; }
-            .hero-buttons { flex-direction: column; width: 100%; }
-            .hero-buttons .btn { width: 100%; }
-        }
-        .mi-boton {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #007BFF;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-}
-.mi-boton:hover {
-  background-color: #0056b3;
-}
+    /* ==========================================================================
+       7. UBICACIÓN Y MAPA INTERACTIVO
+       ========================================================================== */
+    .direccion {
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: 800;
+      font-size: 1.15rem;
+    }
 
+    .mapa {
+      position: relative;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px var(--sombra);
+      border: 4px solid var(--tarjeta);
+    }
 
+    .mapa iframe {
+      width: 100%;
+      height: 400px;
+      border: 0;
+      display: block;
+    }
 
+    #pin {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -100%);
+      background: none;
+      border: 0;
+      font-size: 3.2rem;
+      cursor: pointer;
+      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4));
+      animation: rebote 2s ease-in-out infinite;
+    }
 
+    #popup {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, calc(-100% - 65px));
+      background: var(--tarjeta);
+      color: var(--texto);
+      border-radius: 16px;
+      padding: 12px 18px;
+      width: 240px;
+      text-align: center;
+      box-shadow: 0 8px 20px var(--sombra);
+      display: none;
+      font-weight: 700;
+      z-index: 10;
+    }
 
+    #popup.abierto {
+      display: block;
+    }
 
+    /* ==========================================================================
+       8. SOBRE MÍ Y TARJETA PERSONAL
+       ========================================================================== */
+    .tarjeta {
+      background: var(--tarjeta);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px var(--sombra);
+      display: grid;
+      grid-template-columns: 1fr;
+    }
 
+    .foto-jilian {
+      background: var(--amarillo);
+      min-height: 320px;
+      cursor: zoom-in;
+    }
 
+    .foto-jilian img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
 
-/* =====================================================================
-   11. FOOTER
-   ===================================================================== */
-footer{
-  text-align:center;padding:36px 16px 20px;font-weight:700;
-  color:var(--amarillo);text-shadow:0 2px 0 var(--madera-oscura);
-}
+    .info {
+      padding: 28px;
+    }
 
-@media (prefers-reduced-motion:reduce){
-  *{animation:none!important;transition-duration:.01ms!important}
-  html{scroll-behavior:auto}
-}
-</style>
+    .info h3 {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: 1.8rem;
+      color: var(--rojo);
+      margin-bottom: 14px;
+    }
+
+    .info ul {
+      list-style: none;
+    }
+
+    .info li {
+      padding: 10px 0;
+      border-bottom: 2px dashed var(--amarillo);
+      font-size: 1rem;
+    }
+
+    .info li:last-child {
+      border: 0;
+    }
+
+    .info b {
+      color: var(--verde);
+    }
+
+    @media (min-width: 800px) {
+      .tarjeta {
+        grid-template-columns: 1fr 1.2fr;
+      }
+      .foto-jilian {
+        min-height: 480px;
+      }
+    }
+
+    /* Mis Fotos (Galería Personal) */
+    .subtitulo-familia {
+      margin-top: 50px;
+    }
+
+    .familia {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .familia figure {
+      aspect-ratio: 1;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px var(--sombra);
+      background: var(--amarillo);
+      cursor: zoom-in;
+    }
+
+    .familia img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .familia figure:hover img {
+      transform: scale(1.08);
+    }
+
+    /* ==========================================================================
+       9. FOTOS DEL EVENTO / CUMPLEAÑOS (CON DESCARGA)
+       ========================================================================== */
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 16px;
+    }
+
+    .galeria figure {
+      background: var(--tarjeta);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px var(--sombra);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .galeria img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      display: block;
+      cursor: zoom-in;
+      transition: transform 0.3s ease;
+    }
+
+    .galeria figure:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Botón exclusivo de descarga para Fotos de Cumpleaños */
+    .galeria .btn-descargar {
+      display: block;
+      text-align: center;
+      padding: 10px 6px;
+      font-weight: 800;
+      font-size: 0.88rem;
+      color: var(--texto);
+      text-decoration: none;
+      background: var(--amarillo);
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    .galeria .btn-descargar:hover {
+      background: var(--verde);
+      color: #FFF;
+    }
+
+    /* ==========================================================================
+       10. VISOR GLOBAL DE ZOOM (LIGHTBOX)
+       ========================================================================== */
+    #zoom {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(0, 0, 0, 0.88);
+      backdrop-filter: blur(5px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      cursor: zoom-out;
+    }
+
+    #zoom.abierto {
+      display: flex;
+    }
+
+    #zoom img {
+      max-width: 92%;
+      max-height: 88vh;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+      object-fit: contain;
+    }
+
+    /* ==========================================================================
+       11. MENÚ DE NAVEGACIÓN INFERIOR Y WHATSAPP
+       ========================================================================== */
+    nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 60;
+      display: flex;
+      justify-content: space-around;
+      padding: 8px 6px calc(8px + env(safe-area-inset-bottom, 0px));
+      background: var(--tarjeta);
+      box-shadow: 0 -4px 16px var(--sombra);
+    }
+
+    nav a {
+      flex: 1;
+      text-align: center;
+      text-decoration: none;
+      color: var(--texto);
+      font-weight: 800;
+      font-size: 0.78rem;
+      padding: 6px 2px;
+      border-radius: 14px;
+      transition: background-color 0.2s;
+    }
+
+    nav a span {
+      display: block;
+      font-size: 1.4rem;
+    }
+
+    nav a:hover {
+      background: var(--amarillo);
+    }
+
+    #whatsapp {
+      position: fixed;
+      right: 18px;
+      bottom: 92px;
+      z-index: 70;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+      transition: transform 0.2s;
+    }
+
+    #whatsapp:hover {
+      transform: scale(1.1);
+    }
+
+    #whatsapp svg {
+      width: 34px;
+      height: 34px;
+      fill: #FFF;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 16px;
+      font-weight: 800;
+      font-size: 0.95rem;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .manzana-flotante, #pin, .manzana-grande img { animation: none; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
 </head>
 
-<body class="bloqueado">
+<body>
 
-<canvas id="fondo-anim" aria-hidden="true"></canvas>
-
-<!-- =================== PANTALLA DE BIENVENIDA =================== -->
-<div id="bienvenida" role="dialog" aria-label="Bienvenida">
-  <div class="bv-contenido">
-    <img class="bv-foto" src="img/jc1.png" alt="Jilian Sofia sonriendo">
-    <div class="bv-letrero madera">
-      <small>¡Bienvenidos al cumpleaños N° 11 de</small>
-      <h1>Jilian Sofia <span class="once">🎉</span></h1>
+  <!-- PANTALLA DE BIENVENIDA -->
+  <div id="bienvenida">
+    <div class="manzana-grande">
+      <img src="img/jc1.png" alt="Icono de bienvenida">
     </div>
-    <p class="bv-mensaje">Gracias por ser parte de este día tan especial. Prepárate para una fiesta llena de diversión, risas y un buen piscinazo. 🍎💦</p>
-    <button class="btn" id="bv-entrar" type="button">Abrir Invitación</button>
+    <h1>¡Jilian Sofia cumple 11 años!</h1>
+    <p>Eres la razón de muchas sonrisas. Hoy queremos celebrar contigo, con mucho cariño y con un piscinazo al estilo Applejack.</p>
+    <button class="boton" id="btn-entrar">Ingresar a la fiesta</button>
   </div>
-</div>
 
-<!-- =================== INTERRUPTOR CLARO / OSCURO =================== -->
-<button id="modo" type="button" role="switch" aria-checked="false" aria-label="Cambiar entre modo de día y de noche">
-  <span class="txt" id="modo-txt">Modo de día</span>
-  <span class="pista"><span class="bola" id="modo-ico">☀️</span></span>
-</button>
+  <!-- FONDO ANIMADO DE MANZANITAS -->
+  <div id="fondo-animado" aria-hidden="true"></div>
 
-<main>
+  <!-- BOTÓN CAMBIO MODO CLARO / OSCURO -->
+  <button id="modo" aria-label="Cambiar modo claro u oscuro">🌙</button>
 
-  <!-- =================== INICIO =================== -->
-  <section id="inicio">
-    <div class="hero-texto">
-      <div class="cartel madera">
-        <span class="pre">Cumpleaños</span>
-        <span class="num">11</span>
-      </div>
-      <p class="invita">¡Te invito a celebrar mi cumpleaños!</p>
+  <main>
+    <!-- SECCIÓN: INICIO -->
+    <section id="inicio">
+      <h1>¡Te invito a celebrar!</h1>
+      <p class="invita">Cumpleaños N° 11 de</p>
+      <div class="nombres-festejada">JILIAN SOFIA COTES VASQUEZ</div>
 
-      <div class="nombre-sign madera">
-        <div class="n1">JILIAN SOFIA</div>
-        <div class="n2">COTES VASQUEZ</div>
-      </div>
-
+      <!-- DATOS DE LA FIESTA -->
       <div class="datos">
-        <div class="dato"><span class="ico">📅</span><div><b>Sábado 7 de noviembre</b><span>Anota la fecha</span></div></div>
-        <div class="dato"><span class="ico">⏰</span><div><b>A partir de las 10:00 am</b><span>¡Llega puntual!</span></div></div>
-        <div class="dato"><span class="ico">💦</span><div><b>Con un piscinazo</b><span>Trae tu vestido de baño y toalla</span></div></div>
-      </div>
-
-      <div class="cuenta" id="cuenta" aria-live="off">
-        <div><b id="c-d">0</b><small>días</small></div>
-        <div><b id="c-h">0</b><small>horas</small></div>
-        <div><b id="c-m">0</b><small>min</small></div>
-        <div><b id="c-s">0</b><small>seg</small></div>
-      </div>
-      <p id="cuenta-fin" hidden>¡Hoy es la fiesta! 🎉</p>
-    </div>
-
-    <div class="hero-tarjeta">
-      <img src="img/tarjeta.jpeg" alt="Invitación oficial: Cumpleaños 11 de Jilian Sofia con Applejack">
-    </div>
-  </section>
-
-  <!-- =================== UBICACIÓN =================== -->
-  <section id="ubicacion">
-    <h2 class="titulo-seccion">Ubicación de Mi Cumpleaños</h2>
-    <div class="tarjeta ubic-caja">
-      <div class="ubic-info">
-        <span class="ico-mapa">📍</span>
-        <div>
-          <h4 id="nombre-lugar">Lugar de la Fiesta</h4>
-          <p id="direccion-lugar">Mz 10 cs 6, 450 años III etapa</p>
+        <div class="dato">
+          <span class="ico">📅</span>
+          <div><b>Sábado 7 de Noviembre</b><small>Anota la fecha</small></div>
+        </div>
+        <div class="dato">
+          <span class="ico">⏰</span>
+          <div><b>A partir de las 10:00 am</b><small>¡Llega puntual!</small></div>
+        </div>
+        <div class="dato">
+          <span class="ico">💦</span>
+          <div><b>Con un piscinazo</b><small>Trae tu vestido de baño y toalla</small></div>
         </div>
       </div>
+
+      <!-- CUENTA REGRESIVA EN VIVO -->
+      <div class="cuenta-regresiva-seccion">
+        <h3>⏳ Tiempo restante para la Fiesta:</h3>
+        <div class="cuenta-grid" id="cuenta">
+          <div class="caja-tiempo"><b id="c-d">0</b><small>Días</small></div>
+          <div class="caja-tiempo"><b id="c-h">0</b><small>Horas</small></div>
+          <div class="caja-tiempo"><b id="c-m">0</b><small>Min</small></div>
+          <div class="caja-tiempo"><b id="c-s">0</b><small>Seg</small></div>
+        </div>
+        <p id="cuenta-fin" hidden>🎉 ¡HOY ES LA FIESTA, A CELEBRAR! 🎉</p>
+      </div>
+
+      <div class="hero-tarjeta">
+        <img src="img/cumple.png" alt="Invitación oficial: Cumpleaños 11 de Jilian Sofia con Applejack">
+      </div>
+    </section>
+
+    <!-- SECCIÓN: UBICACIÓN -->
+    <section id="ubicacion">
+      <h2>Ubicación del Evento</h2>
+      <p class="direccion">📍 Mz 10 cs 6, 450 años III etapa, Valledupar, Cesar</p>
+      <div class="mapa">
+        <iframe
+          src="https://maps.google.com/maps?q=10.44598387,-73.279397&z=17&output=embed"
+          title="Mapa de la ubicación" loading="lazy" allowfullscreen></iframe>
+        <button id="pin" aria-label="Ver detalles de la dirección">📍</button>
+        <div id="popup">
+          <b>Cumpleaños de Jilian Cotes</b><br>
+          Mz 10 cs 6, 450 años III etapa
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN: SOBRE MÍ Y MIS FOTOS -->
+    <section id="sobre-mi">
+      <h2>Sobre Mí</h2>
+      <div class="tarjeta">
+        <div class="foto-jilian">
+          <img id="foto-jilian" class="zoomable" alt="Foto principal de Jilian" src="img/jc5.jpg">
+        </div>
+        <div class="info">
+          <h3>Jilian Sofia Cotes Vasquez</h3>
+          <ul>
+            <li><b>NOMBRE:</b> Jilian Sofia Cotes Vasquez</li>
+            <li><b>Fecha de Nacimiento:</b> 4 de noviembre 2015</li>
+            <li><b>Tipo de sangre:</b> B+</li>            
+            <li><b>Elemento:</b> Agua</li>
+            <li><b>Hobby:</b> Dibujar</li>
+            <li><b>Anime Favorito:</b> ______</li>
+            <li><b>Signo Zodiacal:</b> Escorpión</li>
+            <li><b>Personalidad:</b> Tienen una fuerza de voluntad muy fuerte, son intuitivos, apasionados, perseverantes y prefieren trabajar con discreción lejos de los reflectores.</li>
+            <li><b>Juegos Digitales Favoritos:</b> Free Fire, Roblox, Bear.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- MIS FOTOS PERSONAL Y FAMILIAR (SÓLO ZOOM, SIN DESCARGA) -->
+      <h2 class="subtitulo-familia">Mis Fotos</h2>
+      <div class="familia" id="familia"></div>
+    </section>
+
+    <!-- SECCIÓN: FOTOS DEL EVENTO (CON ZOOM Y DESCARGA) -->
+    <section id="fotos">
+      <h2>Fotos de Mi Cumpleaños</h2>
+      <div class="galeria" id="galeria"></div>
+    </section>
+  </main>
+
+  <!-- VISOR GLOBAL DE ZOOM (LIGHTBOX) -->
+  <div id="zoom" role="dialog" aria-label="Vista ampliada de la imagen">
+    <img id="zoom-img" alt="Foto ampliada en pantalla completa">
+  </div>
+
+  <!-- BOTÓN FLOTANTE WHATSAPP -->
+  <a id="whatsapp" aria-label="Confirmar asistencia por WhatsApp" target="_blank" rel="noopener"
+     href="https://wa.me/573022736655?text=%C2%A1Hola!%20Confirmo%20mi%20asistencia%20al%20cumplea%C3%B1os%20de%20Jilian">
+    <svg viewBox="0 0 32 32"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.8 2 6.8L3 29l6.6-2c1.9 1 4 1.6 6.4 1.6 7.2 0 13-5.700 13-12.800S23.200 3 16 3zm0 23.200c-2.100 0-4.100-.6-5.800-1.700l-.4-.2-3.900 1.200 1.200-3.800-.3-.4A10.200 10.200 0 0 1 5.700 15.800C5.700 10.200 10.300 5.700 16 5.700s10.300 4.500 10.300 10.100S21.700 26.200 16 26.200zm5.600-7.600c-.3-.2-1.800-.9-2.100-1-.3-.1-.5-.2-.7.200s-.8 1-1 1.200c-.2.200-.4.200-.7.100-.3-.2-1.300-.5-2.500-1.500-.9-.8-1.500-1.800-1.700-2.100-.2-.3 0-.5.100-.7l.5-.5c.1-.2.200-.3.300-.5.100-.2 0-.4 0-.5l-1-2.300c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.100-.8.400-.3.300-1.100 1.100-1.100 2.600s1.100 3 1.300 3.200c.2.200 2.200 3.300 5.300 4.600 3.100 1.300 3.100.9 3.600.8.600-.1 1.800-.7 2.100-1.500.3-.7.300-1.300.2-1.500-.1-.2-.3-.3-.6-.4z"/></svg>
+  </a>
+
+  <!-- MENÚ DE NAVEGACIÓN INFERIOR -->
+  <nav>
+    <a href="#inicio"><span>🏠</span>Inicio</a>
+    <a href="#ubicacion"><span>📍</span>Ubicación</a>
+    <a href="#sobre-mi"><span>👧</span>Sobre Mí</a>
+    <a href="#fotos"><span>📸</span>Fotos Cumpleaños</a>
+  </nav>
+
+  <!-- PIE DE PÁGINA -->
+  <footer>Jeiner Cotes - Desarrollador Web</footer>
+
+  <!-- ==========================================================================
+     LÓGICA JAVASCRIPT
+     ========================================================================== -->
+  <script>
+    /* ----------------------------------------------------------------------
+       1. ARRAYS DE IMÁGENES
+       ---------------------------------------------------------------------- */
+    const FOTOS_FAMILIA = [
+      'img/jc2.jpg', 'img/jc6.jpg', 'img/jc3.jpg', 'img/jc7.jpg', 
+      'img/jc8.jpg', 'img/jc4.jpg', 'img/jc10.jpg', 'img/jc11.jpg', 
+      'img/jc13.jpg', 'img/jc9.jpg'
+    ];
+
+    const FOTOS_EVENTO = [
+      'img/jc14.jpeg', 'img/jc15.jpeg', '', '', '', '', '', '', '', ''
+    ];
+
+    /* Generador SVG de respaldo cuando la ruta de la imagen está vacía */
+    function imagenEjemplo(texto) {
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400">
+        <rect width="400" height="400" fill="#FDF3A7"/>
+        <text x="200" y="210" font-size="100" text-anchor="middle">🍎</text>
+        <text x="200" y="310" font-size="26" text-anchor="middle" fill="#7CB342" font-family="sans-serif">${texto}</text>
+      </svg>`;
+      return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+    }
+
+    /* ----------------------------------------------------------------------
+       2. PANTALLA DE BIENVENIDA
+       ---------------------------------------------------------------------- */
+    const bienvenida = document.getElementById('bienvenida');
+    document.getElementById('btn-entrar').addEventListener('click', () => {
+      bienvenida.classList.add('oculto');
+      setTimeout(() => bienvenida.remove(), 800);
+    });
+
+    /* ----------------------------------------------------------------------
+       3. MODO CLARO / OSCURO
+       ---------------------------------------------------------------------- */
+    const botonModo = document.getElementById('modo');
+    botonModo.addEventListener('click', () => {
+      const esNoche = document.body.classList.toggle('noche');
+      botonModo.textContent = esNoche ? '☀️' : '🌙';
+    });
+
+    /* ----------------------------------------------------------------------
+       4. ANIMACIÓN DE MANZANAS EN EL FONDO
+       ---------------------------------------------------------------------- */
+    const fondoAnimado = document.getElementById('fondo-animado');
+    for (let i = 0; i < 16; i++) {
+      const m = document.createElement('span');
+      m.className = 'manzana-flotante';
+      m.textContent = i % 4 === 0 ? '🍏' : '🍎';
+      m.style.left = Math.random() * 100 + '%';
+      m.style.fontSize = (18 + Math.random() * 28) + 'px';
+      m.style.animationDuration = (12 + Math.random() * 12) + 's';
+      m.style.animationDelay = (-Math.random() * 20) + 's';
+      fondoAnimado.appendChild(m);
+    }
+
+    /* ----------------------------------------------------------------------
+       5. MAPA: POPUP INTERACTIVO
+       ---------------------------------------------------------------------- */
+    const popup = document.getElementById('popup');
+    document.getElementById('pin').addEventListener('click', () => {
+      popup.classList.toggle('abierto');
+    });
+
+    /* ----------------------------------------------------------------------
+       6. VISOR GLOBAL DE ZOOM (LIGHTBOX)
+       Permite ampliar CUALQUIER imagen al hacer clic.
+       ---------------------------------------------------------------------- */
+    const zoomContainer = document.getElementById('zoom');
+    const zoomImg = document.getElementById('zoom-img');
+
+    function abrirZoom(urlImagen) {
+      zoomImg.src = urlImagen;
+      zoomContainer.classList.add('abierto');
+    }
+
+    zoomContainer.addEventListener('click', () => zoomContainer.classList.remove('abierto'));
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') zoomContainer.classList.remove('abierto');
+    });
+
+    // Zoom en la foto principal de Jilian
+    document.getElementById('foto-jilian').addEventListener('click', function() {
+      abrirZoom(this.src);
+    });
+
+    /* ----------------------------------------------------------------------
+       7. RENDERIZADO: MIS FOTOS (SÓLO ZOOM)
+       ---------------------------------------------------------------------- */
+    const contenedorFamilia = document.getElementById('familia');
+    FOTOS_FAMILIA.forEach((src, index) => {
+      const url = src || imagenEjemplo('Mi Foto ' + (index + 1));
+      const figure = document.createElement('figure');
+      const img = document.createElement('img');
+      img.alt = `Foto personal ${index + 1}`;
+      img.src = url;
       
-      <div class="mapa-contenedor">
-        <iframe class="mapa" id="mapa"
-          src=""
-          title="Mapa del lugar de la fiesta" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-    </div>
-  </section>
+      // Evento Zoom
+      img.addEventListener('click', () => abrirZoom(url));
 
-  <!-- =================== SOBRE MÍ =================== -->
-  <section id="sobre-mi">
-    <h2 class="titulo-seccion">Sobre Mí</h2>
-
-    <article class="tarjeta sobre">
-      <div class="sobre-foto">
-        <img src="img/jilian55-removebg-preview.png" alt="Retrato de Jilian Sofia">
-      </div>
-      <div class="sobre-info">
-        <h3>Jilian Sofia Cotes Vasquez</h3>
-        <dl class="ficha">
-          <div><dt>Nombre:</dt><dd>Jilian Sofia Cotes Vasquez</dd></div>
-          <div><dt>Fecha de nacimiento:</dt><dd>4 de noviembre 2015</dd></div>
-          <div><dt>Tipo de sangre:</dt><dd>B+</dd></div>
-          
-          <div><dt>Elemento:</dt><dd>Agua 💧</dd></div>
-          <div><dt>Hobby:</dt><dd>Dibujar 🎨</dd></div>
-          <div><dt>Anime favorito:</dt><dd>—</dd></div>
-          <div><dt>Signo zodiacal:</dt><dd>Escorpión ♏</dd></div>
-          <div class="largo"><dt>Personalidad:</dt><dd>Tienen una fuerza de voluntad muy fuerte, son intuitivos, apasionados, perseverantes y prefieren trabajar con discreción lejos de los reflectores.</dd></div>
-          <div><dt>Juegos digitales favoritos:</dt><dd>Free Fire, Roblox, Bear</dd></div>
-        </dl>
-      </div>
-    </article>
-
-    <h3 class="familia-titulo">Mi familia</h3>
-    <div class="familia">
-      <figure><img src="img/JC (1).jpeg" alt="Mi familia con la torta de cumpleaños" loading="lazy"></figure>
-      <figure><img src="img/JC (2).jpeg" alt="Saltando a la piscina con mi hermano" loading="lazy"></figure>
-      <figure><img src="img/JC (3).jpeg" alt="Sentada en el borde de la piscina" loading="lazy"></figure>
-      <figure><img src="img/JC (4).jpeg" alt="En la piscina con mi papá y mis hermanos" loading="lazy"></figure>
-    </div>
-  </section>
-
-  <!-- =================== FOTOS DEL EVENTO =================== -->
-  <section id="fotos">
-    <h2 class="titulo-seccion">Fotos de mi Cumpleaños</h2>
-    <div class="galeria" id="galeria"></div>
-  </section>
-
-</main>
-
-<!-- =================== FOOTER =================== -->
-<footer>Jeiner Cotes - Desarrollador Web</footer>
-
-<!-- =================== BOTÓN FLOTANTE DE WHATSAPP =================== -->
-<a id="whatsapp" target="_blank" rel="noopener" aria-label="Confirmar asistencia por WhatsApp" href="#">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-</a>
-
-<!-- =================== MENÚ INFERIOR =================== -->
-<nav id="menu" aria-label="Navegación principal">
-  <button type="button" data-ir="inicio" class="activo">
-    <svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>Inicio
-  </button>
-  <button type="button" data-ir="ubicacion">
-    <svg viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Ubicación
-  </button>
-  <button type="button" data-ir="sobre-mi">
-    <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>Sobre Mí
-  </button>
-  <button type="button" data-ir="fotos">
-    <svg viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v12H4z"/><circle cx="12" cy="13.5" r="3.5"/></svg>Fotos del Evento
-  </button>
-</nav>
-
-
-<script>
-/* =====================================================================
-   CONFIGURACIÓN PRINCIPAL
-   ===================================================================== */
-const CONFIG = {
-  whatsappNumero: "573022736655",
-  whatsappMensaje: "¡Hola! Confirmo mi asistencia al cumpleaños de Jilian",
-  fechaFiesta: "2026-11-07T10:00:00-05:00",
-
-  /* --- UBICACIÓN --- */
-  ubicacion: {
-    nombre: "Casa de Jilian Sofia",
-    direccion: "Mz 10 cs 6, 450 años III etapa",
-    // Pega aquí la URL src completa generada por Google Maps (Compartir > Insertar Mapa)
-    mapaUrl: "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1961.8498622793782!2d-73.2785554107857!3d10.445385336813535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sco!4v1793052034148!5m2!1ses!2sco"
-  },
-
-
-  /* --- IMÁGENES --- */
-  imagenes: {
-    tarjeta: "img/tarjeta.jpg",
-    jilian: "img/jilian55-removebg-preview.png",
-    familia: [
-      "img/familia1.jpg",
-      "img/familia2.jpg",
-      "img/familia3.jpg",
-      "img/familia4.jpg"
-    ]
-  },
-
-  /* --- FOTOS DEL EVENTO (Rutas a imágenes tras la fiesta) --- */
-  fotosEvento: [
-    // "img/evento1.jpg",
-    // "img/evento2.jpg"
-  ]
-};
-
-/* =====================================================================
-   INICIALIZACIÓN Y LÓGICA DE APLICACIÓN
-   ===================================================================== */
-document.addEventListener("DOMContentLoaded", () => {
-  
-  // 1. Cargar datos de ubicación
-  document.getElementById("nombre-lugar").textContent = CONFIG.ubicacion.nombre;
-  document.getElementById("direccion-lugar").textContent = CONFIG.ubicacion.direccion;
-  document.getElementById("mapa").src = CONFIG.ubicacion.mapaUrl;
-
-  // 2. Cargar imágenes dinámicamente desde CONFIG
-  document.querySelectorAll("[data-img]").forEach(el => {
-    const clave = el.getAttribute("data-img");
-    if (CONFIG.imagenes[clave]) {
-      el.src = CONFIG.imagenes[clave];
-    }
-  });
-
-  document.querySelectorAll("[data-fam]").forEach(el => {
-    const idx = parseInt(el.getAttribute("data-fam"), 10);
-    if (CONFIG.imagenes.familia && CONFIG.imagenes.familia[idx]) {
-      el.src = CONFIG.imagenes.familia[idx];
-    }
-  });
-
-  // 3. Configurar WhatsApp
-  const btnWsp = document.getElementById("whatsapp");
-  btnWsp.href = `https://wa.me/${CONFIG.whatsappNumero}?text=${encodeURIComponent(CONFIG.whatsappMensaje)}`;
-
-  // 4. Pantalla de bienvenida
-  const bv = document.getElementById("bienvenida");
-  document.getElementById("bv-entrar").addEventListener("click", () => {
-    bv.classList.add("salir");
-    document.body.classList.remove("bloqueado");
-  });
-
-  // 5. Cambio de Modo Día / Noche
-  const btnModo = document.getElementById("modo");
-  const txtModo = document.getElementById("modo-txt");
-  const icoModo = document.getElementById("modo-ico");
-
-  btnModo.addEventListener("click", () => {
-    const esOscuro = document.documentElement.getAttribute("data-theme") === "dark";
-    if (esOscuro) {
-      document.documentElement.setAttribute("data-theme", "light");
-      btnModo.setAttribute("aria-checked", "false");
-      txtModo.textContent = "Modo de día";
-      icoModo.textContent = "☀️";
-    } else {
-      document.documentElement.setAttribute("data-theme", "dark");
-      btnModo.setAttribute("aria-checked", "true");
-      txtModo.textContent = "Modo de noche";
-      icoModo.textContent = "🌙";
-    }
-  });
-
-  // 6. Cuenta Regresiva
-  function actualizarCuenta() {
-    const ahora = new Date().getTime();
-    const destino = new Date(CONFIG.fechaFiesta).getTime();
-    const dif = destino - ahora;
-
-    if (dif <= 0) {
-      document.getElementById("cuenta").hidden = true;
-      document.getElementById("cuenta-fin").hidden = false;
-      return;
-    }
-
-    const d = Math.floor(dif / (1000 * 60 * 60 * 24));
-    const h = Math.floor((dif % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const m = Math.floor((dif % (1000 * 60 * 60)) / (1000 * 60));
-    const s = Math.floor((dif % (1000 * 60)) / 1000);
-
-    document.getElementById("c-d").textContent = d;
-    document.getElementById("c-h").textContent = h;
-    document.getElementById("c-m").textContent = m;
-    document.getElementById("c-s").textContent = s;
-  }
-  setInterval(actualizarCuenta, 1000);
-  actualizarCuenta();
-
-  // 7. Renderizar Galería de Fotos del Evento
-  const contenedorGaleria = document.getElementById("galeria");
-  const totalSlots = 6;
-  
-  for (let i = 0; i < totalSlots; i++) {
-    const div = document.createElement("div");
-    if (CONFIG.fotosEvento && CONFIG.fotosEvento[i]) {
-      div.className = "slot llena";
-      div.innerHTML = `<img src="${CONFIG.fotosEvento[i]}" alt="Foto del evento ${i + 1}">`;
-    } else {
-      div.className = "slot";
-      div.innerHTML = `<div><span>📷</span><small>Espacio ${i + 1}</small></div>`;
-    }
-    contenedorGaleria.appendChild(div);
-  }
-
-  // 8. Navegación Inferior Móvil
-  const botonesMenu = document.querySelectorAll("#menu button");
-  botonesMenu.forEach(btn => {
-    btn.addEventListener("click", () => {
-      const idSeccion = btn.getAttribute("data-ir");
-      const seccion = document.getElementById(idSeccion);
-      if (seccion) {
-        seccion.scrollIntoView({ behavior: "smooth" });
-      }
-    });
-  });
-
-  window.addEventListener("scroll", () => {
-    let actual = "";
-    document.querySelectorAll("main section").forEach(sec => {
-      const top = sec.offsetTop - 120;
-      if (window.scrollY >= top) {
-        actual = sec.getAttribute("id");
-      }
+      figure.appendChild(img);
+      contenedorFamilia.appendChild(figure);
     });
 
-    botonesMenu.forEach(btn => {
-      btn.classList.toggle("activo", btn.getAttribute("data-ir") === actual);
+    /* ----------------------------------------------------------------------
+       8. RENDERIZADO: FOTOS DEL EVENTO (ZOOM + BOTÓN DE DESCARGA EXCLUSIVO)
+       ---------------------------------------------------------------------- */
+    const galeriaEvento = document.getElementById('galeria');
+    FOTOS_EVENTO.forEach((src, index) => {
+      const url = src || imagenEjemplo('Foto Cumple ' + (index + 1));
+      const figure = document.createElement('figure');
+
+      // Imagen
+      const img = document.createElement('img');
+      img.alt = `Foto cumpleaños ${index + 1}`;
+      img.src = url;
+      img.addEventListener('click', () => abrirZoom(url));
+
+      // Botón Descargar (Exclusivo para la sección de cumpleaños)
+      const btnDescargar = document.createElement('a');
+      btnDescargar.className = 'btn-descargar';
+      btnDescargar.href = url;
+      btnDescargar.download = `cumpleanos-jilian-foto-${index + 1}.jpg`;
+      btnDescargar.innerHTML = '⬇️ Descargar Foto';
+
+      figure.appendChild(img);
+      figure.appendChild(btnDescargar);
+      galeriaEvento.appendChild(figure);
     });
-  });
 
-  // 9. Animación Canvas (Lluvia de manzanas de Applejack)
-  const canvas = document.getElementById("fondo-anim");
-  const ctx = canvas.getContext("2d");
-  let ancho, alto;
+    /* ----------------------------------------------------------------------
+       9. CUENTA REGRESIVA GIGANTE Y ACTIVA
+       ---------------------------------------------------------------------- */
+    // Fecha del evento: Sábado 7 de Noviembre de 2026 a las 10:00 AM
+    const FECHA_EVENTO = new Date(2026, 10, 7, 10, 0, 0).getTime();
 
-  function redimensionar() {
-    ancho = canvas.width = window.innerWidth;
-    alto = canvas.height = window.innerHeight;
-  }
-  window.addEventListener("resize", redimensionar);
-  redimensionar();
+    function actualizarCuentaRegresiva() {
+      const ahora = new Date().getTime();
+      const diferencia = FECHA_EVENTO - ahora;
 
-  const manzanas = Array.from({ length: 22 }, () => ({
-    x: Math.random() * ancho,
-    y: Math.random() * alto,
-    size: 16 + Math.random() * 20,
-    speedY: 1 + Math.random() * 1.8,
-    rot: Math.random() * Math.PI * 2,
-    rotSpeed: (Math.random() - 0.5) * 0.03
-  }));
-
-  function animarManzanas() {
-    ctx.clearRect(0, 0, ancho, alto);
-    manzanas.forEach(m => {
-      m.y += m.speedY;
-      m.rot += m.rotSpeed;
-
-      if (m.y > alto + 40) {
-        m.y = -40;
-        m.x = Math.random() * ancho;
+      if (diferencia <= 0) {
+        document.getElementById('cuenta').hidden = true;
+        document.getElementById('cuenta-fin').hidden = false;
+        return;
       }
 
-      ctx.save();
-      ctx.translate(m.x, m.y);
-      ctx.rotate(m.rot);
-      ctx.font = `${m.size}px serif`;
-      ctx.textAlign = "center";
-      ctx.textBaseline = "middle";
-      ctx.fillText("🍎", 0, 0);
-      ctx.restore();
-    });
-    requestAnimationFrame(animarManzanas);
-  }
-  animarManzanas();
-});
+      const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
 
+      document.getElementById('c-d').textContent = dias;
+      document.getElementById('c-h').textContent = horas < 10 ? '0' + horas : horas;
+      document.getElementById('c-m').textContent = minutos < 10 ? '0' + minutos : minutos;
+      document.getElementById('c-s').textContent = segundos < 10 ? '0' + segundos : segundos;
+    }
 
-
-
-
-// agregado del mapa //
- document.addEventListener('DOMContentLoaded', () => {
-
-            /* ----------------------------------------------------------------------
-               A. ARREGLO DE DATOS - 16 PUNTOS DE DETECCIÓN (COORDENADAS DE EJEMPLO)
-               ----------------------------------------------------------------------
-               IMPORTANTE: Modificar las coordenadas, direcciones y estados 
-               por los datos oficiales suministrados por la entidad.
-            ---------------------------------------------------------------------- */
-            const puntosFotodeteccion = [
-               
-            /* BATALLON LA POPA */
-                { id: 1, lat: 10.445971, lng: -73.279444, punto:"JILIA SOFIA COTES", direccion: "MZ 10 CASA 6 450 AÑOS III", DIA: "SABADO 7 DE NOVIEMBRE", estado: "Activo", horario: "10:00 AM Horas" },
-                                                   
-            ];    
-            const map = L.map('map').setView([10.445971, -73.279444], 13);
-
-            // Capa de mapa OpenStreetMap
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                maxZoom: 19,
-                attribution: '&copy; OpenStreetMap'
-            }).addTo(map);
-
-            // Crear Marcador Personalizado con icono FontAwesome en CSS de Leaflet
-            const createCustomIcon = (estado) => {
-                const color = estado === 'Activo' ? '#07f58a' : '#78909C';
-                return L.divIcon({
-                    className: 'custom-leaflet-marker',
-                    html: `<div style="background-color: ${color}; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; border: 2px solid white; box-shadow: 0 3px 8px rgba(0,0,0,0.4);"><i class="fa-solid fa-star" style="font-size: 14px;"></i></div>`,
-                    iconSize: [30, 30],
-                    iconAnchor: [10, 10]
-                });
-            };
-
-            const markersMap = {};
-            const pointsListContainer = document.getElementById('pointsList');
-
-            // Renderizar Lista Lateral y Puntos en el Mapa
-            function renderPuntos(lista) {
-                lista.forEach(p => {
-                    // Elemento HTML Lista
-                    const item = document.createElement('div');
-                    item.className = 'point-item';
-                    item.dataset.id = p.id;
-                    // Marcador Mapa (si no existe)
-                    if (!markersMap[p.id]) {
-                        const marker = L.marker([p.lat, p.lng], { icon: createCustomIcon(p.estado) }).addTo(map);
-                        
-                        const popupContent = `
-                            <div class="custom-popup">
-                                <h4>${p.punto}</h4>
-                                <p><strong>Dirección:</strong> ${p.direccion}</p>
-                                <p><strong>DIA:</strong> ${p.DIA}</p>
-                                
-                                <p><strong>Hora:</strong> ${p.horario}</p>
-                            </div>
-                        `;
-                        marker.bindPopup(popupContent);
-
-                        marker.on('click', () => {
-                            highlightListItem(p.id);
-                        });
-
-                        markersMap[p.id] = marker;
-                    }
-                });
-            }          
-
-            renderPuntos(puntosFotodeteccion);
-
-            // Filtros y Búsqueda en Mapa
-            const mapSearch = document.getElementById('mapSearch');
-            const mapFilter = document.getElementById('mapFilter');
-
-            function filterPoints() {
-                const searchTerm = mapSearch.value.toLowerCase();
-                const filterVal = mapFilter.value;
-
-                const filtrados = puntosFotodeteccion.filter(p => {
-                    const matchText = p.nombre.toLowerCase().includes(searchTerm) || p.direccion.toLowerCase().includes(searchTerm);
-                    const matchStatus = (filterVal === 'todos') || (filterVal === 'activo' && p.estado === 'Activo') || (filterVal === 'inactivo' && p.estado === 'Inactivo');
-                    return matchText && matchStatus;
-                });
-
-                renderPuntos(filtrados);
-            }
-            /* ----------------------------------------------------------------------
-               7. ANIMACIÓN DE CONTADORES NUMÉRICOS
-               ---------------------------------------------------------------------- */
-            const statsSection = document.querySelector('.stats-section');
-            let animated = false;
-
-            window.addEventListener('scroll', () => {
-                const pos = statsSection.getBoundingClientRect().top;
-                const winH = window.innerHeight;
-
-                if (pos < winH && !animated) {
-                    animated = true;
-                    document.querySelectorAll('.stat-number[data-target]').forEach(el => {
-                        const target = +el.getAttribute('data-target');
-                        let count = 0;
-                        const speed = target / 20;
-
-                        const updateCount = () => {
-                            count += speed;
-                            if (count < target) {
-                                el.innerText = Math.ceil(count);
-                                setTimeout(updateCount, 40);
-                            } else {
-                                el.innerText = target;
-                            }
-                        };
-                        updateCount();
-                    });
-                }
-
-            
-            });
-
-            document.getElementById('backToTop').addEventListener('click', () => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-
-        });
-</script>
+    // Ejecución continua e inicialización inmediata
+    setInterval(actualizarCuentaRegresiva, 1000);
+    actualizarCuentaRegresiva();
+  </script>
 </body>
 </html>
